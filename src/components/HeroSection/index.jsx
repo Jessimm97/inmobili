@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HeroSection.module.css';
 
-// PROPS: We accept 'count' so the parent can tell us the number
 const HeroSection = ({ count }) => {
     return (
         <section className={styles['hero-section']}>

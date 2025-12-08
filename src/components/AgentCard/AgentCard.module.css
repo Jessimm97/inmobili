@@ -1,6 +1,3 @@
-/* src/components/AgentCard/AgentCard.module.css */
-
-/* BLOCK: The Card Container */
 .agent-card {
     background: white;
     border: 1px solid #eee;
@@ -11,10 +8,9 @@
     align-items: center;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-top: 30px; /* Space from description */
+    margin-top: 30px;
 }
 
-/* ELEMENT: Avatar Wrapper */
 .agent-card__avatar-wrapper {
     width: 80px;
     height: 80px;
@@ -24,14 +20,12 @@
     border: 3px solid #f0f0f0;
 }
 
-/* ELEMENT: Actual Image */
 .agent-card__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* ELEMENT: Name & Title */
 .agent-card__name {
     margin: 0;
     color: #333;
@@ -45,16 +39,14 @@
     font-size: 0.9rem;
 }
 
-/* ELEMENT: Buttons Container */
 .agent-card__actions {
     display: flex;
     gap: 10px;
     width: 100%;
 }
 
-/* ELEMENT: Action Buttons */
 .agent-card__btn {
-    flex: 1; /* Make them equal width */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +61,6 @@
     transition: background-color 0.2s;
 }
 
-/* MODIFIER: WhatsApp Style */
 .agent-card__btn--whatsapp {
     background-color: #25D366;
     color: white;
@@ -79,7 +70,6 @@
     background-color: #128C7E;
 }
 
-/* MODIFIER: Phone Style */
 .agent-card__btn--phone {
     background-color: #34495e;
     color: white;

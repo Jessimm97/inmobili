@@ -1,6 +1,3 @@
-/* src/data/properties.js */
-
-// 1. Define your Agents
 const agents = {
     sarah: {
         name: "Sarah Connors",
@@ -22,7 +19,6 @@ const agents = {
     }
 };
 
-// 2. The Main Data Array
 export const propertiesData = [
     { 
         id: 1, 

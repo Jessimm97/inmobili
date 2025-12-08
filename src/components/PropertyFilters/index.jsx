@@ -2,28 +2,20 @@ import React, { useState } from 'react';
 import styles from './PropertyFilters.module.css';
 
 const PropertyFilters = ({ onFilterChange }) => {
-    // Local state for the form inputs
     const [filters, setFilters] = useState({
         bedrooms: 'all',
         maxPrice: ''
     });
 
-    // Handle Input Changes
     const handleChange = (e) => {
         const { name, value } = e.target;
-        
-        // 1. Update local state
         const newFilters = { ...filters, [name]: value };
         setFilters(newFilters);
-
-        // 2. Send data up to Parent immediately
         onFilterChange(newFilters);
     };
 
     return (
         <div className={styles['filters']}>
-            
-            {/* Filter 1: Bedrooms */}
             <div className={styles['filters__group']}>
                 <label className={styles['filters__label']}>Bedrooms</label>
                 <select 
@@ -38,8 +30,6 @@ const PropertyFilters = ({ onFilterChange }) => {
                     <option value="4">4+ Bedrooms</option>
                 </select>
             </div>
-
-            {/* Filter 2: Max Price */}
             <div className={styles['filters__group']}>
                 <label className={styles['filters__label']}>Max Price ($)</label>
                 <input 
@@ -51,8 +41,6 @@ const PropertyFilters = ({ onFilterChange }) => {
                     className={styles['filters__input']}
                 />
             </div>
-
-            {/* Optional: Clear Button */}
             <button 
                 className={styles['filters__reset']}
                 onClick={() => {

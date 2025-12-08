@@ -11,7 +11,7 @@ import useScrollToTop from "../hooks/useScrollToTop";
 
 const ScrollToTop = () => {
     useScrollToTop();
-    return null; // This component doesn't render anything visually
+    return null; 
 }
 
 export const PrincipalRouter = () => {

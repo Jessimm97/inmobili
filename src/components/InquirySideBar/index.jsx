@@ -3,10 +3,7 @@ import styles from './InquirySidebar.module.css';
 import { GoSidebarCollapse } from "react-icons/go";
 
 const InquirySidebar = ({ isOpen, property, onClose }) => {
-    // 1. Construct the CSS class based on state
     const sidebarClass = `${styles.sidebar} ${isOpen ? styles['sidebar--open'] : ''}`;
-
-    // 2. Prepare Email Link
     const subject = property ? `Information Request: ${property.id}` : 'Inquiry';
     const body = property ? `I am interested in the property priced at ${property.price}.` : '';
     const mailtoLink = `mailto:inmobili@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

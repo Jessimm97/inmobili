@@ -21,8 +21,8 @@
 }
 
 .properties-page__grid img {
-    width: 100%;       /* Fill the card width */
-    height: 300px;     /* Fixed height is okay */
-    object-fit: cover; /* Crop image nicely so it doesn't stretch */
-    display: block;    /* Removes tiny whitespace under images */
+    width: 100%;       
+    height: 300px;     
+    object-fit: cover; 
+    display: block;   
 }

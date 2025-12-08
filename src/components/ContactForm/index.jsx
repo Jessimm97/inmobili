@@ -2,39 +2,26 @@ import React, { useState } from 'react';
 import styles from './ContactForm.module.css';
 
 const ContactForm = ({ propertyId }) => {
-    // 1. STATE: Track form values
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         message: ''
     });
-
-    // 2. STATE: Track if message was sent
     const [isSent, setIsSent] = useState(false);
 
-    // Handler: Update state when user types
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Handler: Simulate sending email
     const handleSubmit = (e) => {
-        e.preventDefault(); // Stop page from refreshing
-        
-        // Simulating an API call...
+        e.preventDefault();
         console.log("Sending data for Property ID:", propertyId);
         console.log("Form Data:", formData);
-
-        // Show success message
         setIsSent(true);
-
-        // Reset form after 3 seconds (optional)
-        // setTimeout(() => setIsSent(false), 3000);
     };
 
-    // RENDER: If sent, show success message
     if (isSent) {
         return (
             <div className={styles['contact-form--success']}>
@@ -44,7 +31,6 @@ const ContactForm = ({ propertyId }) => {
         );
     }
 
-    // RENDER: The Form
     return (
         <form className={styles['contact-form']} onSubmit={handleSubmit}>
             <h3>Send a Message</h3>

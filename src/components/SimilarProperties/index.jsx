@@ -5,18 +5,13 @@ import PropertyCard from '../PropertyCard';
 import { propertiesData } from '../../data/properties'; 
 
 const SimilarProperties = ({ currentProperty }) => {
-    
-    // Filter Logic:
-    // 1. Exclude current ID
-    // 2. Match bedrooms (approximate size)
     const similar = propertiesData.filter(item => {
         return (
             item.id !== currentProperty.id && 
             Math.abs(item.bedrooms - currentProperty.bedrooms) <= 1 
         );
-    }).slice(0, 3); // Limit to 3 items
+    }).slice(0, 3);
 
-    // Don't render anything if no matches found
     if (similar.length === 0) return null;
 
     return (

@@ -3,7 +3,6 @@ import styles from './AgentCard.module.css';
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const AgentCard = ({ agent }) => {
-    // Safety check
     if (!agent) return null;
 
     return (

@@ -1,6 +1,3 @@
-/* src/pages/HomePage/HomePage.module.css */
-
-/* BLOCK: The main page container */
 .home {
     display: flex;
     flex-direction: column;
