@@ -1,0 +1,47 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    z-index: 1000;
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    color:#545454;
+}
+
+.sidebar--open {
+    transform: translateX(0); /* Slide in */
+}
+
+.sidebar__close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: right;
+    color: #545454;
+}
+
+.sidebar__list {
+    margin-top: 50px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.sidebar__email-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* For the mailto link */
+    display: inline-block;
+}

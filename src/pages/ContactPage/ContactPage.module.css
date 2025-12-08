@@ -1,0 +1,88 @@
+.contact {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+}
+
+.contact__container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.contact__title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+@media (min-width: 768px) {
+    .contact__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact__info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.contact__label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.contact__value {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact__btn {
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact__btn:hover {
+    background-color: #0056b3;
+}

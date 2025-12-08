@@ -1,0 +1,28 @@
+.properties-page {
+    width: 100%; 
+    max-width: 100%;
+    min-height: 100vh; 
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.properties-page__title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.properties-page__grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.properties-page__grid img {
+    width: 100%;       /* Fill the card width */
+    height: 300px;     /* Fixed height is okay */
+    object-fit: cover; /* Crop image nicely so it doesn't stretch */
+    display: block;    /* Removes tiny whitespace under images */
+}

@@ -1,0 +1,61 @@
+/* src/components/PropertyFilters/PropertyFilters.module.css */
+
+.filters {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px; /* Space between filters and the grid */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    gap: 20px;
+    align-items: flex-end; /* Aligns inputs with button bottom */
+}
+
+/* Group: Label + Input */
+.filters__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1; /* Each input takes equal width */
+    min-width: 200px;
+}
+
+.filters__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Inputs */
+.filters__select,
+.filters__input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filters__select:focus,
+.filters__input:focus {
+    border-color: #007bff;
+}
+
+/* Reset Button */
+.filters__reset {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    height: 40px; /* Match input height */
+}
+
+.filters__reset:hover {
+    background-color: #5a6268;
+}

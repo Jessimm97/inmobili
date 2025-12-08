@@ -1,0 +1,83 @@
+/* src/components/ContactForm/ContactForm.module.css */
+
+/* BLOCK: Form Container */
+.contact-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+}
+
+.contact-form h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* ELEMENT: Input Groups */
+.contact-form__group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ELEMENT: Labels */
+.contact-form__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* ELEMENT: Inputs & Textarea */
+.contact-form__input,
+.contact-form__textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    border-color: #007bff;
+}
+
+.contact-form__textarea {
+    resize: vertical; /* Allow user to resize height only */
+    min-height: 80px;
+}
+
+/* ELEMENT: Submit Button */
+.contact-form__btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-form__btn:hover {
+    background-color: #0056b3;
+}
+
+/* MODIFIER: Success Message */
+.contact-form--success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+}

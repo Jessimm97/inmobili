@@ -1,0 +1,61 @@
+/* src/components/NavBar/NavBar.module.css */
+
+/* BLOCK: The main bar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo left, Links right */
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    
+    /* Sticky Magic */
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Stays above the sidebar and images */
+}
+
+/* ELEMENT: Logo */
+.navbar__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar__logo span {
+    color: #007bff; /* Highlight color for part of the name */
+}
+
+/* ELEMENT: Links Container */
+.navbar__links {
+    display: flex;
+    gap: 30px;
+}
+
+/* ELEMENT: Individual Link */
+.navbar__link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: color 0.2s;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent; /* Invisible border for hover effect */
+}
+
+.navbar__link:hover {
+    color: #007bff;
+}
+
+/* MODIFIER: Active State (When user is on that page) */
+.navbar__link--active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
