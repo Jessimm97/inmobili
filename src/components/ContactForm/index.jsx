@@ -1,25 +1,51 @@
 import React, { useState } from 'react';
 import styles from './ContactForm.module.css';
+import { createInquiry } from '../../services/inquiryService';
 
 const ContactForm = ({ propertyId }) => {
+    // 1. Estado inicial incluyendo el teléfono
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',
+        phone: '', 
         message: ''
     });
+    
+    // 2. Estados de UI
     const [isSent, setIsSent] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Sending data for Property ID:", propertyId);
-        console.log("Form Data:", formData);
-        setIsSent(true);
+        setIsLoading(true);
+        setIsError(false);
+
+        // 3. Mapeo de datos para el Backend (Inquiry.java)
+        const payload = {
+            clientName: formData.name,
+            clientEmail: formData.email,
+            clientPhone: formData.phone,
+            message: formData.message,
+            propertyId: propertyId
+        };
+
+        // 4. Llamada al servicio
+        const result = await createInquiry(payload);
+
+        setIsLoading(false);
+
+        if (result) {
+            setIsSent(true);
+            setFormData({ name: '', email: '', phone: '', message: '' });
+        } else {
+            setIsError(true);
+        }
     };
 
     if (isSent) {
@@ -62,6 +88,19 @@ const ContactForm = ({ propertyId }) => {
             </div>
 
             <div className={styles['contact-form__group']}>
+                <label className={styles['contact-form__label']}>Phone</label>
+                <input 
+                    type="tel" 
+                    name="phone"
+                    required
+                    placeholder="+52 998 123 4567"
+                    className={styles['contact-form__input']}
+                    value={formData.phone}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className={styles['contact-form__group']}>
                 <label className={styles['contact-form__label']}>Message</label>
                 <textarea 
                     name="message"
@@ -72,9 +111,19 @@ const ContactForm = ({ propertyId }) => {
                     onChange={handleChange}
                 />
             </div>
+            
+            {isError && (
+                <div className={styles['contact-form__error']}>
+                    There was an error sending your message. Please try again.
+                </div>
+            )}
 
-            <button type="submit" className={styles['contact-form__btn']}>
-                Send Message
+            <button 
+                type="submit" 
+                className={styles['contact-form__btn']}
+                disabled={isLoading}
+            >
+                {isLoading ? 'Sending...' : 'Send Message'}
             </button>
         </form>
     );

@@ -21,6 +21,14 @@
     padding: 16px;
 }
 
+.property-card__title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+}
+
 .property-card__price {
     font-size: 1.5rem;
     font-weight: bold;
