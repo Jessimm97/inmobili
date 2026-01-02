@@ -1,16 +1,42 @@
-# React + Vite
+# 🎨 InmobiliApp Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern User Interface built with React for the Real Estate platform.
 
-Currently, two official plugins are available:
+## ⚡ Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Framework:** React 18
+* **Build Tool:** Vite (Ultra-fast build)
+* **Styling:** CSS Modules + BEM Methodology (Block Element Modifier).
+* **Routing:** React Router Dom v6.
+* **HTTP Client:** Fetch API (implemented with the Adapter Pattern).
 
-## React Compiler
+## 📂 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* `/components`: Reusable UI components (Cards, Forms, Buttons).
+* `/pages`: Main views (Home, Properties, Details).
+* `/services`: API communication layer (handles data adaptation).
+* `/hooks`: Custom hooks (e.g., `useDocumentTitle`).
 
-## Expanding the ESLint configuration
+## 🚀 Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+2.  **Run in development mode:**
+    ```bash
+    npm run dev
+    ```
+    The app will run at `http://localhost:5173` (Vite default).
+
+## 🐳 Docker (Production)
+
+The project includes an optimized multi-stage `Dockerfile`:
+1.  **Build Stage:** Uses Node.js to compile the code.
+2.  **Production Stage:** Uses **Nginx** (Alpine) to serve static files efficiently.
+
+## 🔌 Backend Connection
+
+The frontend expects the **API Gateway** to be running at `http://localhost:8080`.
+If you change the Gateway port, update the constants in `src/services/*.js`.
