@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api/v1/inquiries';
+const API_URL = 'http://18.224.69.91:8080/api/v1/inquiries';
 
 export const createInquiry = async (inquiryData) => {
     try {
