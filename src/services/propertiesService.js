@@ -1,4 +1,4 @@
-const API_URL = 'http://18.116.100.86:8080/api/v1/properties';
+const API_URL = '/api/v1/properties';
 
 // --- FUNCIÓN ADAPTADORA (TRADUCTOR) ---
 const adaptProperty = (backendData) => {
